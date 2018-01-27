@@ -17,7 +17,6 @@ public class EntryIndex
 
     public ArrayList<?> getClassesInJar ( String jarName ) throws Exception {
 
-        System.out.println(jarName);
         String className = "";
         File jarIoFile = new File(jarName);
         ArrayList<Class<?>> classes = new ArrayList();
@@ -28,9 +27,7 @@ public class EntryIndex
         JarFile jarFile = null;
         try {
             jarFile = new JarFile(jarName);
-            System.out.println(jarName);
             Enumeration<JarEntry> entries = jarFile.entries();
-            System.out.println(jarName);
             URL[] urls = {new URL("jar:file:" + jarName + "!/")};
             URLClassLoader cl = URLClassLoader.newInstance(urls);
 
